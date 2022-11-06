@@ -1,0 +1,26 @@
+class Solution:
+  def candyCrush(self,M) :
+      while True:
+        crush=set() 
+        for i in range(Len(M)) 
+           for j in range(Len(M[0])) :
+               if i>1 and M[i][j] and M[i][]==M[i-1][j]==M[i-2][j]:
+                  crush|={(i, j), (i-1, j), (i-2, j) }
+               If j>1 andM[i][j] and M[i][j]==M[i][j-1]==M[i][j-2]:
+                  crush|={( i, j), (i, j-1), (i, j-2) }
+                  |
+
+        if not crush:
+           Break
+        for i, j in crush:
+           M[i][j]=0
+
+        for j in range(Len(M[0])) :
+            idx=Len(M) -1
+            for i in reversed(range(Len(M))):
+                if M[i][j]:
+                    M[idx][j]=M[i][j]
+                    idx-=1
+              for i range (idx+1) : 
+                  M[i][j]=0
+         return M
